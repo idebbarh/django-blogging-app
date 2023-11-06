@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.1rem;
+  background: white;
+  min-height: 80px;
+}
+.header__logo .logo__text {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.header__nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+}
+.header__nav__list .nav__list__item > a {
+  display: block;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  font-weight: 500;
+
+  transition-property: color, background-color;
+  transition: 0.3s ease-in-out;
+}
+
+.header__nav__list > .nav__list__item:last-child > a {
+  border: 2px solid black;
+}
+
+.header__nav__list > .nav__list__item:not(:last-child) > a:hover {
+  color: var(--primary-orange-light);
+}
+
+.header__nav__list > .nav__list__item:last-child > a:hover {
+  background-color: rgba(0, 0, 0);
+  color: white;
+}
