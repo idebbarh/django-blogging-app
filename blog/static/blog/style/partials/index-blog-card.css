@@ -1,0 +1,20 @@
+.index-blog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.index-blog-card__image {
+  max-width: 100%;
+  object-fit: cover;
+  font-style: italic;
+  display: block;
+}
+
+.index-blog-card__text {
+  text-align: center;
+  padding: 1rem 0.8rem;
+  font-weight: 300;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

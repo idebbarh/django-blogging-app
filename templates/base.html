@@ -1,15 +1,16 @@
-{%load static%}
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{%static 'style/base.css'%}" />
-    <link rel="stylesheet" href="{%static 'style/partials/header.css'%}" />
-    <link rel="stylesheet" href="{%static 'style/partials/landing.css'%}" />
-    <title>{%filter upper%}{%block page_title%}{%endblock%}{%endfilter%}</title>
+    <link rel="stylesheet" href="{% static 'style/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/partials/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/partials/landing.css' %}" />
+    {% block css_files %}{% endblock %}
+    <title>{% filter upper %}{% block page_title %}{% endblock %}{% endfilter %}</title>
   </head>
   <body>
-    {%block page_content%}{%endblock%}
+    {% block page_content %}{% endblock %}
   </body>
 </html>

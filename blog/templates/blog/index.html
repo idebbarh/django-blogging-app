@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block page_title %}
+along ismail roads
+{% endblock %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/style/partials/index-blog-card.css' %}" />
+    <link rel="stylesheet" href="{% static 'blog/style/index.css' %}" />
+{% endblock %}
+{% block page_content %} 
+{% include 'partials/header.html' %} 
+{% include 'partials/landing.html' with landing_image=landing_image %} 
+<section id="latest-blogs" class="section">
+    <h3 class="section__title">latst from the blog</h3>
+    <ul class="section__cards-list">
+        {% for blog in latest_blogs%}
+            <li class="cards-list__item">
+                {% include 'blog/partials/index-blog-card.html' with blog=blog %}
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
