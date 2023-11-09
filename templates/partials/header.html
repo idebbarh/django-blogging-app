@@ -4,8 +4,8 @@
   </div>
   <nav class="header__nav">
     <ul class="header__nav__list">
-      <li class="nav__list__item"><a href="/blog">blog</a></li>
-      <li class="nav__list__item"><a href="/">home</a></li>
+      <li class="nav__list__item"><a href="{% url 'blogs-page'%}">blog</a></li>
+      <li class="nav__list__item"><a href="{% url 'index-page' %}">home</a></li>
     </ul>
   </nav>
 </header>

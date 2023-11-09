@@ -1,7 +1,20 @@
-{%extends 'base.html'%} 
-{%block page_title%}blog: along ismail roads{%endblock%}
-{%block page_content%}
-{%include 'partials/header.html'%}
-<h1>all blogs</h1>
-{%endblock%}
+{% extends 'base.html' %} 
+{% load static %}
+{% block page_title %}blog: along ismail roads{% endblock %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/style/partials/blogs-blog-card.css' %}" />
+<link rel="stylesheet" href="{% static 'blog/style/blogs.css' %}" />
+{% endblock %}
+{% block page_content %}
+<section id="all-blogs" class="section">
+    <h3 class="all-blogs-section__title section__title">our most recent blogs</h3>
+    <ul class="all-blogs-section__cards-list">
+        {% for blog in all_blogs%}
+            <li class="all-blogs-cards-list__item">
+                {% include 'blog/partials/blogs-blog-card.html' with blog=blog %}
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
 

@@ -8,13 +8,12 @@ along ismail roads
     <link rel="stylesheet" href="{% static 'blog/style/index.css' %}" />
 {% endblock %}
 {% block page_content %} 
-{% include 'partials/header.html' %} 
 {% include 'partials/landing.html' with landing_image=landing_image %} 
 <section id="latest-blogs" class="section">
-    <h3 class="section__title">latst from the blog</h3>
-    <ul class="section__cards-list">
+    <h3 class="latest-blogs-section__title section__title">latst from the blog</h3>
+    <ul class="latest-blogs-section__cards-list">
         {% for blog in latest_blogs%}
-            <li class="cards-list__item">
+            <li class="latest-blogs-cards-list__item">
                 {% include 'blog/partials/index-blog-card.html' with blog=blog %}
             </li>
         {% endfor %}

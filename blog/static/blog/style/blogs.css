@@ -1,0 +1,5 @@
+.all-blogs-section__cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

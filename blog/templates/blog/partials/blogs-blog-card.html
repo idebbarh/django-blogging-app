@@ -1,0 +1,16 @@
+{% load static %}
+<article class="blogs-blog-card">
+  <div class="blogs-blog-card__left">
+    <img
+      src="{% static 'assets/images/' %}{{blog.image}}"
+      alt="{{blog.title}}"
+      class="blogs-blog-card__image"
+    />
+  </div>
+  <div class="blogs-blog-card__right">
+    <h4 class="blogs-blog-card__title">{{blog.title}}</h4>
+    <p class="blogs-blog-card__description">{{blog.description}}</p>
+        <a href="{% url 'blog-page' blog.slug %}" class="blogs-blog-card__btn">read more -></a>
+    <time class="blogs-blog-card__date">{{blog.date}}</time>
+  </div>
+</article>

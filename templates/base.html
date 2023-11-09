@@ -11,6 +11,7 @@
     <title>{% filter upper %}{% block page_title %}{% endblock %}{% endfilter %}</title>
   </head>
   <body>
-    {% block page_content %}{% endblock %}
+        {%include 'partials/header.html' %}
+        {% block page_content %}{% endblock %}
   </body>
 </html>

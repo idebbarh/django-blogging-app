@@ -1,6 +1,6 @@
 {% load static %}
 <article class="index-blog-card">
-  <a href="/" class="index-blog-card__link">
+    <a href="{% url 'blog-page' blog.slug %}" class="index-blog-card__link">
     <header class="index-blog-card__head">
       <img
         src="{% static 'assets/images/' %}{{blog.image}}"
@@ -9,7 +9,7 @@
       />
     </header>
     <main class="index-blog-card__main">
-      <p class="index-blog-card__text">{{blog.title}}</p>
+      <h4 class="index-blog-card__title">{{blog.title}}</h4>
     </main>
   </a>
 </article>
