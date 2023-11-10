@@ -1,4 +1,7 @@
 {% extends 'base.html' %} 
 {% block page_content %} 
-{{ single_blog.title }} 
+    {% include 'partials/landing.html' with landing_image=landing_image landing_title=single_blog.title %} 
+    <section id='blog-details-section' class='section'>
+        <p class='blog-details-section__content'>{{single_blog.content}}</p>
+    </section>
 {% endblock %}

@@ -1,9 +1,11 @@
-{%load static%}
+{% load static %}
 <section id="landing-section">
-  <!-- {{landing_title}} -->
   <img
-    src="{%static 'assets/images/'%}{{landing_image}}"
+    src="{% static 'assets/images/' %}{{landing_image}}"
     alt="Landing Image"
     class="landing-section__image"
   />
+{% if landing_title %}
+    <h1 class="landing-section__bigtitle">{{landing_title}}</h1>
+{% endif %}
 </section>

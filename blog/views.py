@@ -8,6 +8,7 @@ from blog_site.settings import BASE_DIR
 images_dir = BASE_DIR / "static/assets/images/"
 images_paths = [image for image in os.listdir(images_dir) if os.path.isfile(os.path.join(images_dir,image))]
 
+
 blogs_info = [
 {
     "title":"this is a title",
@@ -47,7 +48,9 @@ blogs_info = [
 
 def index(_):
     random_image_index = random.randrange(0,len(images_paths)-1)
-    file_content = render_to_string("blog/index.html",{"landing_image":images_paths[random_image_index],"latest_blogs":blogs_info})
+    random_landing_image = images_paths[random_image_index]
+
+    file_content = render_to_string("blog/index.html",{"landing_image":random_landing_image,"latest_blogs":blogs_info})
     return HttpResponse(file_content)
 
 def blogs(_):
@@ -60,6 +63,8 @@ def blog(_,slug):
     if not blog_info :
         raise Http404()
 
-    file_content = render_to_string("blog/blog.html",{"single_blog":blog_info[0]})
+    random_image_index = random.randrange(0,len(images_paths)-1)
+    random_landing_image = images_paths[random_image_index]
 
+    file_content = render_to_string("blog/blog.html",{"landing_image":random_landing_image,"single_blog":blog_info[0]})
     return HttpResponse(file_content)
